@@ -17,7 +17,7 @@ public class box : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-           gameObject.SetActive(false);
+           //gameObject.SetActive(false);
         }
     }
 
