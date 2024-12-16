@@ -1,18 +1,26 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using UnityEditor.Build.Content;
 
 
 
 public class GameDirector : MonoBehaviour
 {
-    public List<Enemy> Enemies;
+   
+    [Header("Managers")]
+    public EnemyManager enemyManager;
+    public LevelManager levelManager;
+    public void Start()
+    {
+        levelManager.RestartLevel();
+    }
+
+
     public void LevelCompleted()
     {
-        foreach (var e in Enemies) {
-        
-        e.speed = 0;
-        
-        }
+        enemyManager.StopEnemies();   
     }
 }

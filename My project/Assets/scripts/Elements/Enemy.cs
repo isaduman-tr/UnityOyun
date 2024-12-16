@@ -7,7 +7,7 @@ using UnityEditor.Build.Content;
 
 public class Enemy : MonoBehaviour
 {
-   public Player player;
+    public Player player;
     public float speed;
 
     private void Update()
@@ -17,5 +17,9 @@ public class Enemy : MonoBehaviour
             var direction = (player.transform.position - transform.position).normalized; //Enemynin düþmana doðru konumlanmasý
             transform.position += direction * Time.deltaTime * speed; // Enemy hýzý
         }
+    }
+    public void Stop() 
+    {
+        speed = 0;
     }
 }
