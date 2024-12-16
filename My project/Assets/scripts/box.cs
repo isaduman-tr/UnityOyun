@@ -26,7 +26,7 @@ public class box : MonoBehaviour
 
     void Update()
     {
-        //kutu hýzý kod alaný
+        //kutu hýzý kod alanýn
         var direction =Vector3.zero;
         if (Input.GetKey(KeyCode.LeftShift))
         {
