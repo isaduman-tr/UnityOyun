@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             ÝsAppleCollected = true;
-            //Player collactable toplarsa collactable yok olsun komutu
+            //Player collactable toplarsa collactable yok olsun
         }
         if (other.CompareTag("Door") && ÝsAppleCollected )
         {
