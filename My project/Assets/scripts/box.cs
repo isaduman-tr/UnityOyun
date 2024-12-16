@@ -17,14 +17,16 @@ public class box : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-           //gameObject.SetActive(false);
+           gameObject.SetActive(false);
+           //Player Enemye dokununca yok olsun komutu
+
         }
     }
 
 
     void Update()
     {
-        
+        //kutu hýzý kod alaný
         var direction =Vector3.zero;
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -57,7 +59,7 @@ public class box : MonoBehaviour
         //normalized iki tuþa basýnca vektör hýzlarýný eþitliyor
         _rb.linearVelocity = direction.normalized * speed;
 
-        //transform.position += direction * speed * Time.deltaTime;
+       
 
     }
 }
