@@ -2,12 +2,17 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using UnityEditor.Build.Content;
 
 
-public class box : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private Rigidbody _rb;
     public float speed =2;
+    public bool ÝsAppleCollected;
+    public GameDirector gameDirector;
+    
     void Start()
     {
         _rb =GetComponent<Rigidbody>();
@@ -18,8 +23,18 @@ public class box : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
            gameObject.SetActive(false);
-           //Player Enemye dokununca yok olsun komutu
+           //Player Enemye dokununca Player yok olsun komutu
 
+        }
+        if (other.CompareTag("Collactable"))
+        {
+            other.gameObject.SetActive(false);
+            ÝsAppleCollected = true;
+            //Player collactable toplarsa collactable yok olsun komutu
+        }
+        if (other.CompareTag("Door") && ÝsAppleCollected )
+        {
+            gameDirector.LevelCompleted();
         }
     }
 
