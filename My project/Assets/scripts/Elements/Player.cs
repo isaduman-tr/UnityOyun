@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         {
            gameObject.SetActive(false);//Player Enemye dokununca Player yok olsun komutu
 
-
+            
         }
         if (other.CompareTag("Collactable"))
         {

@@ -10,8 +10,8 @@ public class LevelManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        DeactivateDoor();
-        RandomizeDoorPosition();
+        DeactivateDoor(); // oyun restartlanýnca kapýnýn görünmez olmasý
+        RandomizeDoorPosition();//oyun restartlanýnca kapýnýn random konumlanmasý
     }
 
     private void RandomizeDoorPosition()
@@ -28,6 +28,6 @@ public class LevelManager : MonoBehaviour
 
     public void AppleCollected()
     {
-        door.SetActive(true);
+        door.SetActive(true); // Collactable toplanýnca kapýnýn aktif olmasý
     }
 }

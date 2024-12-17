@@ -15,9 +15,15 @@ public class GameDirector : MonoBehaviour
     public LevelManager levelManager;
     public void Start()
     {
-        levelManager.RestartLevel();
+        RestartLevel();
+
     }
 
+    private void RestartLevel()
+    {
+        levelManager.RestartLevel();
+        enemyManager.RestartEnemyManager();
+    }
 
     public void LevelCompleted()
     {
