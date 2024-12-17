@@ -13,10 +13,15 @@ public class Player : MonoBehaviour
     public bool ÝsAppleCollected;
     public GameDirector gameDirector;
     
-    void Start()
+    
+    
+    
+    public void RestartPlayer()
     {
-        _rb =GetComponent<Rigidbody>();//unity rigidbodysini getirir
-        
+        gameObject.SetActive(true); //Oyuncu Enemye dokunduktan sonra restart edildiðinde tekrar göster
+        _rb = GetComponent<Rigidbody>();//unity rigidbodysini getirir
+        _rb.position = Vector3.zero;// her restarta player konumunu sýfýra getir
+        ÝsAppleCollected = false; // Collactable toplanýp r ye basýnca enemyleri durdur
     }
     private void OnTriggerEnter(Collider other)
     {

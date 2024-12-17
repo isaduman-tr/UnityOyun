@@ -11,24 +11,24 @@ public class EnemyManager : MonoBehaviour
     public Player player;
     public Enemy enemyPrefab;
     public List<Enemy> enemies;
-    public int enemyCount;
+    private Vector2 enemyCount;
 
     public void RestartEnemyManager()
     {
-        DeleteEnemies(); 
+        DeleteEnemies(); //R ye basınca eskileri siler 
         GenerateEnemies(); //Oyun başlayınca düşmanın ortaya çıkması
 
     }
 
     private void GenerateEnemies()
     {
-        for (int i = 0; i < enemyCount; i++)
+        var randomEnemyCount = UnityEngine.Random.Range(2,5);//Enemy sayılarının rastgele verilmesi
+        for (int i = 0; i < randomEnemyCount; i++)
         {
             
-            var enemyXPos = 0f;
-            enemyXPos = UnityEngine.Random.Range(-2.5f, 2.5f);
+            var enemyXPos = UnityEngine.Random.Range(-2.5f, 2.5f);
             var newEnemy = Instantiate(enemyPrefab); //Prefab nesneyi tanımlama
-            newEnemy.transform.position = new Vector3(enemyXPos, 0, 3 + i * 1.5f); // Prefab nesnenin konumu
+            newEnemy.transform.position = new Vector3(enemyXPos, 0, 2 + i * 1.5f); // Prefab nesnenin konumu
             enemies.Add(newEnemy); //oyundaki enemies listesine enemy eklenmesi
             newEnemy.StartEnemy(player); //Collactable toplanınca listedeki Enemy nin düşmana doğru hareketi
 
@@ -38,9 +38,13 @@ public class EnemyManager : MonoBehaviour
 
     }
 
-    private void DeleteEnemies()
+    private void DeleteEnemies() // R ye basınca enemieslerin silinmesi
     {
-
+        foreach (var e in enemies) 
+        { 
+            Destroy(e.gameObject);
+        }
+        enemies.Clear();// R ye basınca listeye yeni enemiesler ekleniyor onları siler
     }
 
     public void StopEnemies()
