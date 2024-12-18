@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
     {
         DeactivateDoor(); // oyun restartlanýnca kapýnýn görünmez olmasý
         RandomizeDoorPosition();//oyun restartlanýnca kapýnýn random konumlanmasý
-        DeleteCollactables();
+        DeleteCollactables(); //oyun restartlanýnca collactableslarý siler
         GenerateCollactables(); // oyun restartlanýnca Collactable üretir        
     }
 

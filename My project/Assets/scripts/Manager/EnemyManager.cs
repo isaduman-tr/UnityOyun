@@ -11,7 +11,7 @@ public class EnemyManager : MonoBehaviour
     public Player player;
     public Enemy enemyPrefab;
     public List<Enemy> enemies;
-    private Vector2 enemyCount;
+    public Vector2 enemyCount;
 
     public void RestartEnemyManager()
     {
@@ -22,7 +22,7 @@ public class EnemyManager : MonoBehaviour
 
     private void GenerateEnemies()
     {
-        var randomEnemyCount = UnityEngine.Random.Range(2,5);//Enemy sayýlarýnýn rastgele verilmesi
+        var randomEnemyCount = UnityEngine.Random.Range(enemyCount.x,enemyCount.y);//Enemy sayýlarýnýn rastgele verilmesi
         for (int i = 0; i < randomEnemyCount; i++)
         {
             

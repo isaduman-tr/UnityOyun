@@ -25,12 +25,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
-        {
-           gameObject.SetActive(false);//Player Enemye dokununca Player yok olsun komutu
-
-            
-        }
+        
         if (other.CompareTag("Collactable"))
         {
             other.gameObject.SetActive(false);
@@ -42,6 +37,15 @@ public class Player : MonoBehaviour
         {
             gameDirector.LevelCompleted(); //Collacterlarý toplayýnca gamedirector.cs deki komutu çaðýran komut
             
+        }
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Enemy"))
+        {
+            gameObject.SetActive(false);//Player Enemye dokununca Player yok olsun komutu
+
+
         }
     }
 
