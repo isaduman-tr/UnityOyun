@@ -13,7 +13,7 @@ public class Collactable : MonoBehaviour
     void Start()
     {
         StartAnimation();
-        //örnek
+        //örnek kod
     }
 
     private void StartAnimation()
