@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
         _player = player;
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponentInChildren<Animator>();
+        transform.Rotate(0, Random.Range(-180,180), 0);
     }
     private void Update()
     {
