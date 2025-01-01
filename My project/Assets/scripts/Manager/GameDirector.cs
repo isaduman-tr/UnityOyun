@@ -9,8 +9,8 @@ using UnityEditor.Build.Content;
 
 public class GameDirector : MonoBehaviour
 {
+   
 
-    
     [Header("Managers")]
     public EnemyManager enemyManager;
     public LevelManager levelManager;
@@ -33,6 +33,7 @@ public class GameDirector : MonoBehaviour
         levelManager.RestartLevel();
         enemyManager.RestartEnemyManager();
         player.RestartPlayer();
+       
     }
 
     public void LevelCompleted()

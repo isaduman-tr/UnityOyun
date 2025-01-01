@@ -9,13 +9,16 @@ public class LevelManager : MonoBehaviour
     public GameObject door;
     public GameObject collactablePrefab;
     public List<GameObject> collactables;
-
+    
+    
+    
     public void RestartLevel()
     {
         DeactivateDoor(); // oyun restartlanýnca kapýnýn görünmez olmasý
         RandomizeDoorPosition();//oyun restartlanýnca kapýnýn random konumlanmasý
         DeleteCollactables(); //oyun restartlanýnca collactableslarý siler
-        GenerateCollactables(); // oyun restartlanýnca Collactable üretir        
+        GenerateCollactables(); // oyun restartlanýnca Collactable üretir 
+
     }
 
     private void DeleteCollactables()// R ye her basýldýðýnda eski collactablesý siler
